@@ -5,7 +5,7 @@
 groups = ["default", "lambda1", "lambda2", "test"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:db64902c4650fe3a0a93dede7ffd1d6af2cec0b5fd490f4957106b8c8db5bb63"
+content_hash = "sha256:7244197b903b0fb3c3e2d568f91315d241872bcb7a6382c72225baa6e2d50285"
 
 [[metadata.targets]]
 requires_python = "==3.12.*"
@@ -30,7 +30,7 @@ name = "boto3"
 version = "1.40.35"
 requires_python = ">=3.9"
 summary = "The AWS SDK for Python"
-groups = ["lambda1"]
+groups = ["lambda2"]
 dependencies = [
     "botocore<1.41.0,>=1.40.35",
     "jmespath<2.0.0,>=0.7.1",
@@ -46,7 +46,7 @@ name = "botocore"
 version = "1.40.35"
 requires_python = ">=3.9"
 summary = "Low-level, data-driven core of boto 3."
-groups = ["lambda1"]
+groups = ["lambda2"]
 dependencies = [
     "jmespath<2.0.0,>=0.7.1",
     "python-dateutil<3.0.0,>=2.1",
@@ -279,7 +279,7 @@ name = "python-dateutil"
 version = "2.9.0.post0"
 requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 summary = "Extensions to the standard Python datetime module"
-groups = ["lambda1"]
+groups = ["lambda2"]
 dependencies = [
     "six>=1.5",
 ]
@@ -308,7 +308,7 @@ name = "s3transfer"
 version = "0.14.0"
 requires_python = ">=3.9"
 summary = "An Amazon S3 Transfer Manager"
-groups = ["lambda1"]
+groups = ["lambda2"]
 dependencies = [
     "botocore<2.0a.0,>=1.37.4",
 ]
@@ -331,7 +331,7 @@ name = "six"
 version = "1.17.0"
 requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 summary = "Python 2 and 3 compatibility utilities"
-groups = ["lambda1"]
+groups = ["lambda2"]
 files = [
     {file = "six-1.17.0-py2.py3-none-any.whl", hash = "sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"},
     {file = "six-1.17.0.tar.gz", hash = "sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"},
@@ -353,7 +353,7 @@ name = "urllib3"
 version = "2.5.0"
 requires_python = ">=3.9"
 summary = "HTTP library with thread-safe connection pooling, file post, and more."
-groups = ["lambda1"]
+groups = ["lambda2"]
 marker = "python_version >= \"3.10\""
 files = [
     {file = "urllib3-2.5.0-py3-none-any.whl", hash = "sha256:e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc"},
