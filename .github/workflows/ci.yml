@@ -1,0 +1,42 @@
+name: Check
+on:
+  push
+
+jobs:
+  tests:
+    name: Test
+    runs-on: ubuntu-latest
+    env:
+      AWS_DEFAULT_REGION: eu-west-1
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install pdm
+        uses: pdm-project/setup-pdm@v4
+        with:
+          cache: true
+
+      - name: Install dependencies
+        run: pdm install
+
+      - name: Test lambda1
+        run: |
+          pdm run test_lambda1
+
+      - name: Test lambda2
+        run: |
+          pdm run test_lambda2
+
+      # Just for the purpose of illustration, to show bad generate requirements.txt files
+
+      - name: generate requirements.txt for lambda1
+        run: |
+          pdm export -o lambda1/requirements.txt --without-hashes -G lambda1
+          cat lambda1/requirements.txt
+
+      - name: generate requirements.txt for lambda2
+        run: |
+          pdm export -o lambda2/requirements.txt --without-hashes -G lambda2
+          cat lambda2/requirements.txt
