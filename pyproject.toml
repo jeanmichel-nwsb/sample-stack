@@ -18,6 +18,8 @@ test_lambda1.cmd = "pytest -vv --cov=lambda1 --cov-report term-missing --cov-rep
 test_lambda1.env = {PYTHONPATH="."}
 test_lambda2.cmd = "pytest -vv --cov=lambda2 --cov-report term-missing --cov-report xml ./tests/tests_lambda2"
 test_lambda2.env = {PYTHONPATH="."}
+genreqs_lambda1 = "pdm export -o lambda1/requirements.txt --without-hashes -G lambda1"
+genreqs_lambda2 = "pdm export -o lambda2/requirements.txt --without-hashes -G lambda2"
 
 [dependency-groups]
 lambda1 = [
